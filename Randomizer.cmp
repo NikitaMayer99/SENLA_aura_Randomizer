@@ -1,0 +1,37 @@
+<aura:component implements = "flexipage:availableForAllPageTypes">
+    <aura:attribute name="resultNumber" type="Integer"/>
+    <aura:attribute name = "buttonIsActive" type = "Boolean" default = "true"/>
+    
+    <lightning:card title="Randomizer" iconName="standard:bot">
+    <lightning:layout>
+        <lightning:layoutItem padding="around-small" size="6">
+    		<div aria-labelledby="newrandomform">
+                <fieldset class="slds-box slds-theme_default slds-container_small">
+                    
+                    <form class="slds-form_stacked">
+                        <lightning:input type="number" aura:id="firstNumber" 
+                                         label="First Number"
+                                         name="firstNumber"
+                                         required="true"
+                                         onchange="{!c.checkField}"/>
+                        <lightning:input type="number" aura:id="secondNumber" 
+                                         label="Second Number"
+                                         name="secondNumber"
+                                         required="true"
+                                         onchange="{!c.checkField}"/>
+                        <lightning:button label="Calculate"
+                                          variant="brand"
+                                          disabled="{!v.buttonIsActive}"
+                                          onclick="{!c.handleCalculate}"/>
+                        <lightning:input type="number"
+                                         label="Result: "
+                                         name="resultNumber"
+                                         readonly="true"
+                                         value="{!v.result}"/>
+        			</form>
+      			</fieldset>
+    		</div>
+        </lightning:layoutItem>
+    </lightning:layout>
+    </lightning:card>
+</aura:component>
