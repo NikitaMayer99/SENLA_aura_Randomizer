@@ -10,9 +10,8 @@
     
     handleCalculate: function(component, event, helper) {
         
-        let firstField = component.find('firstNumber').get('v.value');
-        let secondField = component.find('secondNumber').get('v.value');
-          
+        let firstField = Number(component.find('firstNumber').get('v.value'));
+        let secondField = Number(component.find('secondNumber').get('v.value'));
         if (firstField >= secondField) {
             let toastEvent = $A.get("e.force:showToast");
     		toastEvent.setParams({
@@ -24,8 +23,8 @@
     		});
             toastEvent.fire();
         } else {
-            let result = Math.floor(Math.random() * (secondField - firstField + 1)) + firstField;
-            component.set("v.result", result);
+            let result = Math.floor(firstField + Math.random() * (secondField - firstField + 1));
+            component.set("v.resultNumber", result);
         }
     }
 })
