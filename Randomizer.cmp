@@ -4,7 +4,7 @@
     
     <lightning:card title="Randomizer" iconName="standard:bot">
     <lightning:layout>
-        <lightning:layoutItem padding="around-small" size="6">
+        <lightning:layoutItem padding="around-small" size="12">
     		<div aria-labelledby="newrandomform">
                 <fieldset class="slds-box slds-theme_default slds-container_small">
                     
@@ -27,7 +27,7 @@
                                          label="Result: "
                                          name="resultNumber"
                                          readonly="true"
-                                         value="{!v.result}"/>
+                                         value="{!v.resultNumber}"/>
         			</form>
       			</fieldset>
     		</div>
